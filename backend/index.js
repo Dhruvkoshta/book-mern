@@ -18,6 +18,7 @@ app.use(
 		origin: "https://book-mern-okvf.vercel.app",
 		methods: ["GET", "POST", "PUT", "DELETE"],
 		allowedHeaders: ["content-type"],
+		credentials: true,
 	})
 );
 
