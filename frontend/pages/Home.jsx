@@ -2,9 +2,13 @@ import Spinner from "../components/Spinner";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { AiOutlineEdit } from "react-icons/ai";
+import { AiOutlineEdit, AiOutlineInfoCircle } from "react-icons/ai";
 import { BsInfoCircle } from "react-icons/bs";
-import { MdOutlineAddBox, MdOutlineDelete } from "react-icons/md";
+import {
+	MdOutlineAddBox,
+	MdOutlineDelete,
+	MdOutlineEdit,
+} from "react-icons/md";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -82,7 +86,26 @@ const Home = () => {
 								{book.publishYear}
 							</TableCell>
 							<TableCell align='right'>
-								<div className='fles justify-center gap-x-5'></div>
+								<div className='fles justify-center gap-x-5'>
+									<Link to={`/books/${book._id}`}>
+										<MdOutlineEdit
+											style={{ fontSize: "2rem" }}
+											className='text-4xl'
+										/>
+									</Link>
+									<span onClick={() => handleDelete(book._id)}>
+										<MdOutlineDelete
+											style={{ fontSize: "2rem" }}
+											className='text-4xl'
+										/>
+									</span>
+									<Link to={`/books/${book._id}`}>
+										<AiOutlineInfoCircle
+											style={{ fontSize: "2rem" }}
+											className='text-4xl'
+										/>
+									</Link>
+								</div>
 							</TableCell>
 						</TableRow>
 					))}
