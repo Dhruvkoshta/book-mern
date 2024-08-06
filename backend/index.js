@@ -11,16 +11,16 @@ const port = process.env.PORT;
 //Middleware for parsing request body
 app.use(express.json());
 //Midlle ware for handling cors
-// app.use(cors());
+app.use(cors());
 //allow custom headers
-app.use(
-	cors({
-		origin: "https://book-mern-okvf.vercel.app",
-		methods: ["GET", "POST", "PUT", "DELETE"],
-		allowedHeaders: ["content-type"],
-		credentials: true,
-	})
-);
+// app.use(
+// 	cors({
+// 		origin: "https://book-mern-okvf.vercel.app",
+// 		methods: ["GET", "POST", "PUT", "DELETE"],
+// 		allowedHeaders: ["content-type"],
+// 		credentials: true,
+// 	})
+// );
 
 app.get("/", (req, res) => {
 	res.send("Hello World!");
