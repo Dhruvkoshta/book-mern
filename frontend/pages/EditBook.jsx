@@ -15,7 +15,7 @@ const EditBook = () => {
 	useEffect(() => {
 		setIsLoading(true);
 		axios
-			.get(`http://localhost:3000/books/${id}`)
+			.get(`https://book-mern-ebon.vercel.app/books/${id}`)
 			.then((response) => {
 				setTitle(response.data.data.title);
 				setAuthor(response.data.data.author);
@@ -37,7 +37,7 @@ const EditBook = () => {
 			publishYear,
 		};
 		axios
-			.put(`http://localhost:3000/books/${id}`, formData)
+			.put(`https://book-mern-ebon.vercel.app/books/${id}`, formData)
 			.then((response) => {
 				setIsLoading(false);
 				navigate("/");

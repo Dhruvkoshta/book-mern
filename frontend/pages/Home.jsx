@@ -19,7 +19,7 @@ const Home = () => {
 	useEffect(() => {
 		setIsLoading(true);
 		axios
-			.get("http://localhost:3000/books")
+			.get("https://book-mern-ebon.vercel.app/books")
 			.then((response) => {
 				setBooks(response.data.data);
 				setIsLoading(false);
@@ -33,7 +33,7 @@ const Home = () => {
 	const handleDelete = (id) => {
 		setIsLoading(true);
 		axios
-			.delete(`http://localhost:3000/books/${id}`)
+			.delete(`https://book-mern-ebon.vercel.app/books/${id}`)
 			.then((response) => {
 				setIsLoading(false);
 				window.location.reload(false);

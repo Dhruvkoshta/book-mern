@@ -20,7 +20,7 @@ const CreateBook = () => {
 			publishYear,
 		};
 		axios
-			.post("http://localhost:3000/books", formData)
+			.post("https://book-mern-ebon.vercel.app/books", formData)
 			.then((response) => {
 				setIsLoading(false);
 				navigate("/");

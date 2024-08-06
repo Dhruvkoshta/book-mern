@@ -13,9 +13,11 @@ const ShowBook = () => {
 	const [book, setBook] = useState({});
 	const navigate = useNavigate();
 	useEffect(() => {
-		axios.get(`http://localhost:3000/books/${id}`).then((response) => {
-			setBook(response.data.data);
-		});
+		axios
+			.get(`https://book-mern-ebon.vercel.app/books/${id}`)
+			.then((response) => {
+				setBook(response.data.data);
+			});
 	}, []);
 	const card = (
 		<React.Fragment>
