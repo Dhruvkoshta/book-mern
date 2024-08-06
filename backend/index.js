@@ -15,7 +15,7 @@ app.use(express.json());
 //allow custom headers
 app.use(
 	cors({
-		origin: "http://localhost:3000",
+		origin: "https://book-mern-okvf.vercel.app",
 		methods: ["GET", "POST", "PUT", "DELETE"],
 		allowedHeaders: ["content-type"],
 		credentials: true,
