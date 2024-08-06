@@ -11,15 +11,15 @@ const port = process.env.PORT;
 //Middleware for parsing request body
 app.use(express.json());
 //Midlle ware for handling cors
-app.use(cors());
+// app.use(cors());
 //allow custom headers
-// app.use(
-// 	cors({
-// 		origin: "http://localhost:3000",
-// 		methods: ["GET", "POST", "PUT", "DELETE"],
-// 		allowedHeaders: ["content-type"],
-// 	})
-// );
+app.use(
+	cors({
+		origin: "http://localhost:3000",
+		methods: ["GET", "POST", "PUT", "DELETE"],
+		allowedHeaders: ["content-type"],
+	})
+);
 
 app.get("/", (req, res) => {
 	res.send("Hello World!");
